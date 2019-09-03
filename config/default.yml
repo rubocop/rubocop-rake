@@ -1,1 +1,4 @@
-# Write it!
+Rake/Desc:
+  Description: 'Describe the task with `desc` method.'
+  Enabled: true
+  VersionAdded: '0.1.0'

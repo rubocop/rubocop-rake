@@ -8,4 +8,4 @@ require_relative 'rubocop/rake/inject'
 
 RuboCop::Rake::Inject.defaults!
 
-require_relative 'lib/rubocop/cop/rake_cops.rb'
+require_relative 'rubocop/cop/rake_cops'

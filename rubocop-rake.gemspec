@@ -2,7 +2,7 @@ require_relative 'lib/rubocop/rake/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "rubocop-rake"
-  spec.version       = Rubocop::Rake::VERSION
+  spec.version       = RuboCop::Rake::VERSION
   spec.authors       = ["Masataka Pocke Kuwabara"]
   spec.email         = ["kuwabara@pocke.me"]
 

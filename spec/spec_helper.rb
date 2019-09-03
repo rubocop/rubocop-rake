@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'rubocop/rake'
+require 'rubocop-rake'
 require 'rubocop/rspec/support'
 
 RSpec.configure do |config|
