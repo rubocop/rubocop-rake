@@ -2,3 +2,6 @@ Rake/Desc:
   Description: 'Describe the task with `desc` method.'
   Enabled: true
   VersionAdded: '0.1.0'
+  Include:
+    - 'Rakefile'
+    - '**/*.rake'
