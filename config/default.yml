@@ -4,4 +4,9 @@ Rake/Desc:
   VersionAdded: '0.1.0'
   Include:
     - 'Rakefile'
+Rake/MethodDefinitionInTask:
+  Description: 'TODO: Write a description of the cop.'
+  Enabled: true
+  VersionAdded: '0.75'
+
     - '**/*.rake'
