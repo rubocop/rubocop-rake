@@ -5,3 +5,11 @@ Rake/Desc:
   Include:
     - 'Rakefile'
     - '**/*.rake'
+
+Rake/MethodDefinitionInTask:
+  Description: 'Do not define a method in rake task, because it will be defined to the top level.'
+  Enabled: true
+  VersionAdded: '0.2.0'
+  Include:
+    - 'Rakefile'
+    - '**/*.rake'
