@@ -1,0 +1,36 @@
+inherit_from: .rubocop_todo.yml
+
+require:
+  - rubocop-rake
+  - rubocop-rspec
+
+AllCops:
+  TargetRubyVersion: 2.4
+
+Metrics:
+  Enabled: false
+
+Style/StringLiterals:
+  Enabled: false
+
+Style/AccessModifierDeclarations:
+  EnforcedStyle: inline
+
+Style/NumericPredicate:
+  Enabled: false
+
+Style/UnneededPercentQ:
+  Exclude:
+    - '*.gemspec'
+
+Style/PercentLiteralDelimiters:
+  Exclude:
+    - '*.gemspec'
+
+RSpec/ExampleLength:
+  Enabled: false
+
+Naming/FileName:
+  Exclude:
+    - 'lib/rubocop-rake.rb'
+
