@@ -25,7 +25,7 @@ module RuboCop
       #   end
       #
       class Desc < Cop
-        MSG = 'Describe the task with `desc` method.'.freeze
+        MSG = 'Describe the task with `desc` method.'
 
         def_node_matcher :task?, <<~PATTERN
           (send nil? :task ...)
@@ -54,6 +54,7 @@ module RuboCop
           return nil, task_node unless parent
           return parent, task_node unless parent.block_type?
 
+          # rubocop:disable Style/GuardClause
           if parent.children.find_index(task_node) == 0
             # when task {}
             return parent.parent, parent
@@ -61,6 +62,7 @@ module RuboCop
             # when something { task }
             return parent, task_node
           end
+          # rubocop:enable Style/GuardClause
         end
       end
     end

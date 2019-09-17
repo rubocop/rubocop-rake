@@ -31,7 +31,7 @@ module RuboCop
       #   end
       #
       class MethodDefinitionInTask < Cop
-        MSG = 'Do not define a method in rake task, because it will be defined to the top level.'.freeze
+        MSG = 'Do not define a method in rake task, because it will be defined to the top level.'
 
         def_node_matcher :bad_method?, <<~PATTERN
           (send nil? :bad_method ...)
