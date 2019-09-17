@@ -1,60 +1,80 @@
 # frozen_string_literal: true
 
-# TODO: when finished, run `rake generate_cops_documentation` to update the docs
 module RuboCop
   module Cop
     module Rake
-      # TODO: Write cop description and example of bad / good code. For every
-      # `SupportedStyle` and unique configuration, there needs to be examples.
-      # Examples must have valid Ruby syntax. Do not use upticks.
+      # This cop detects method definition in a task or namespace,
+      # because it is defined to the top level.
+      # It is confusing because the scope looks in the task or namespace,
+      # but actually it is defined to the top level.
       #
-      # @example EnforcedStyle: bar (default)
-      #   # Description of the `bar` style.
+      # @example
+      #   # bad
+      #   task :foo do
+      #     def helper_method
+      #       do_something
+      #     end
+      #   end
       #
       #   # bad
-      #   bad_bar_method
+      #   namespace :foo do
+      #     def helper_method
+      #       do_something
+      #     end
+      #   end
       #
-      #   # bad
-      #   bad_bar_method(args)
-      #
-      #   # good
-      #   good_bar_method
-      #
-      #   # good
-      #   good_bar_method(args)
-      #
-      # @example EnforcedStyle: foo
-      #   # Description of the `foo` style.
-      #
-      #   # bad
-      #   bad_foo_method
-      #
-      #   # bad
-      #   bad_foo_method(args)
-      #
-      #   # good
-      #   good_foo_method
-      #
-      #   # good
-      #   good_foo_method(args)
+      #   # good - It is also defined to the top level,
+      #   #        but it looks expected behavior.
+      #   def helper_method
+      #   end
+      #   task :foo do
+      #   end
       #
       class MethodDefinitionInTask < Cop
-        # TODO: Implement the cop in here.
-        #
-        # In many cases, you can use a node matcher for matching node pattern.
-        # See https://github.com/rubocop-hq/rubocop/blob/master/lib/rubocop/node_pattern.rb
-        #
-        # For example
-        MSG = 'Use `#good_method` instead of `#bad_method`.'.freeze
+        MSG = 'Do not define a method in rake task, because it will be defined to the top level.'.freeze
 
         def_node_matcher :bad_method?, <<~PATTERN
           (send nil? :bad_method ...)
         PATTERN
 
-        def on_send(node)
-          return unless bad_method?(node)
+        def_node_matcher :class_definition?, <<~PATTERN
+          {
+            class module sclass
+            (block
+              (send (const {nil? cbase} {:Class :Module}) :new)
+              args
+              _
+            )
+          }
+        PATTERN
+
+        def_node_matcher :task_or_namespace?, <<-PATTERN
+          (block
+            (send _ {:task :namespace} ...)
+            args
+            _
+          )
+        PATTERN
+
+        def on_def(node)
+          return if in_class_definition?(node)
+          return unless in_task_or_namespace?(node)
 
           add_offense(node)
+        end
+
+        alias on_defs on_def
+
+        private def in_class_definition?(node)
+          node.each_ancestor(:class, :module, :sclass, :block).any? do |a|
+            class_definition?(a)
+          end
+        end
+
+        private def in_task_or_namespace?(node)
+          node.each_ancestor(:block).any? do |a|
+            task_or_namespace?(a)
+          end
         end
       end
     end

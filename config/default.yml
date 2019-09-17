@@ -4,9 +4,12 @@ Rake/Desc:
   VersionAdded: '0.1.0'
   Include:
     - 'Rakefile'
-Rake/MethodDefinitionInTask:
-  Description: 'TODO: Write a description of the cop.'
-  Enabled: true
-  VersionAdded: '0.75'
+    - '**/*.rake'
 
+Rake/MethodDefinitionInTask:
+  Description: 'Do not define a method in rake task, because it will be defined to the top level.'
+  Enabled: true
+  VersionAdded: '0.2.0'
+  Include:
+    - 'Rakefile'
     - '**/*.rake'
