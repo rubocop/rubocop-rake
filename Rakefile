@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require "bundler/gem_tasks"
-task default: :spec
+task default: %i[rubocop spec]
 
 require 'rspec/core/rake_task'
 
@@ -29,4 +29,9 @@ task :new_cop, [:cop] do |_task, args|
   generator.inject_config(config_file_path: 'config/default.yml')
 
   puts generator.todo
+end
+
+desc 'Run rubocop'
+task :rubocop do
+  sh 'rubocop'
 end
