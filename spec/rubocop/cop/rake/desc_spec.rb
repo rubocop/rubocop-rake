@@ -44,4 +44,12 @@ RSpec.describe RuboCop::Cop::Rake::Desc do
       task :bar
     RUBY
   end
+
+  it 'do not register an offense for the default task' do
+    expect_no_offenses(<<~RUBY)
+      task default: :spec
+
+      task default: [:spec, :rubocop]
+    RUBY
+  end
 end
