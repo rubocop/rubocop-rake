@@ -2,6 +2,10 @@
 
 ## master (unreleased)
 
+### New features
+
+* [#6](https://github.com/pocke/rubocop-rake/issues/6): Add `Rake/ClassDefinitionInTask` cop. ([@pocke][])
+
 ### Bug fixes
 
 * [#8](https://github.com/pocke/rubocop-rake/issues/8): Make Rake/Desc to not require description for the default task. ([@pocke][])
