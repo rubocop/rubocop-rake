@@ -7,6 +7,9 @@ module RuboCop
       # It is useful as a documentation of task. And Rake does not display
       # task that does not have `desc` by `rake -T`.
       #
+      # Note: This cop does not require description for the default task,
+      #       because the default task is executed with `rake` without command.
+      #
       # @example
       #   # bad
       #   task :do_something
@@ -34,6 +37,7 @@ module RuboCop
         def on_send(node)
           return unless task?(node)
           return if task_with_desc?(node)
+          return if task_name(node) == :default
 
           add_offense(node)
         end
@@ -47,6 +51,23 @@ module RuboCop
           return false unless desc_candidate
 
           desc_candidate.send_type? && desc_candidate.method_name == :desc
+        end
+
+        private def task_name(node)
+          first_arg = node.arguments[0]
+          case first_arg&.type
+          when :sym, :str
+            return first_arg.value.to_sym
+          when :hash
+            return nil if first_arg.children.size != 1
+
+            pair = first_arg.children.first
+            key = pair.children.first
+            case key.type
+            when :sym, :str
+              key.value.to_sym
+            end
+          end
         end
 
         private def parent_and_task(task_node)
