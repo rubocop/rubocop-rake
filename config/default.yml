@@ -1,3 +1,8 @@
+Rake/ClassDefinitionInTask:
+  Description: 'Do not define a class or module in rake task, because it will be defined to the top level.'
+  Enabled: true
+  VersionAdded: '0.3.0'
+
 Rake/Desc:
   Description: 'Describe the task with `desc` method.'
   Enabled: true

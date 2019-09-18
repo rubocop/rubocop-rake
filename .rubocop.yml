@@ -23,6 +23,12 @@ Style/UnneededPercentQ:
   Exclude:
     - '*.gemspec'
 
+Style/ModuleFunction:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
 Style/PercentLiteralDelimiters:
   Exclude:
     - '*.gemspec'
@@ -33,4 +39,3 @@ RSpec/ExampleLength:
 Naming/FileName:
   Exclude:
     - 'lib/rubocop-rake.rb'
-
