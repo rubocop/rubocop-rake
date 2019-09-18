@@ -2,6 +2,10 @@
 
 ## master (unreleased)
 
+### Bug fixes
+
+* [#8](https://github.com/pocke/rubocop-rake/issues/8): Make Rake/Desc to not require description for the default task. ([@pocke][])
+
 <!--
 
 ### New features
@@ -16,7 +20,7 @@
 
 ### New features
 
-* [#5](https://github.com/pocke/rubocop-rake): Add `Rake/MethodDefinitionInTask`. ([@pocke][])
+* [#5](https://github.com/pocke/rubocop-rake/pull/5): Add `Rake/MethodDefinitionInTask`. ([@pocke][])
 
 ## 0.1.0 (2019-09-04)
 
