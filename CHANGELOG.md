@@ -2,14 +2,6 @@
 
 ## master (unreleased)
 
-### New features
-
-* [#6](https://github.com/rubocop-hq/rubocop-rake/issues/6): Add `Rake/ClassDefinitionInTask` cop. ([@pocke][])
-
-### Bug fixes
-
-* [#8](https://github.com/rubocop-hq/rubocop-rake/issues/8): Make Rake/Desc to not require description for the default task. ([@pocke][])
-
 <!--
 
 ### New features
@@ -19,6 +11,16 @@
 ### Changes
 
 -->
+
+## 0.3.0 (2019-09-25)
+
+### New features
+
+* [#6](https://github.com/rubocop-hq/rubocop-rake/issues/6): Add `Rake/ClassDefinitionInTask` cop. ([@pocke][])
+
+### Bug fixes
+
+* [#8](https://github.com/rubocop-hq/rubocop-rake/issues/8): Make Rake/Desc to not require description for the default task. ([@pocke][])
 
 ## 0.2.0 (2019-09-17)
 
