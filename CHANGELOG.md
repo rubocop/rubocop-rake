@@ -2,6 +2,8 @@
 
 ## master (unreleased)
 
+## 0.3.1 (2019-10-06)
+
 ### Bug fixes
 
 * [#17](https://github.com/rubocop-hq/rubocop-rake/pull/17): Filter target files for Rake/ClassDefinitionInTask cop. ([@pocke][])
