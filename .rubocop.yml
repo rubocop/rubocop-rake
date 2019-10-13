@@ -33,6 +33,9 @@ Style/PercentLiteralDelimiters:
   Exclude:
     - '*.gemspec'
 
+Style/TrailingCommaInArguments:
+  EnforcedStyleForMultiline: comma
+
 RSpec/ExampleLength:
   Enabled: false
 

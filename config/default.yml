@@ -13,6 +13,11 @@ Rake/Desc:
   Enabled: true
   VersionAdded: '0.1.0'
 
+Rake/DuplicateTask:
+  Description: 'Do not define tasks with the same name'
+  Enabled: true
+  VersionAdded: '0.4.0'
+
 Rake/MethodDefinitionInTask:
   Description: 'Do not define a method in rake task, because it will be defined to the top level.'
   Enabled: true
