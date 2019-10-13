@@ -2,16 +2,6 @@
 
 ## master (unreleased)
 
-### New features
-
-* [#13](https://github.com/rubocop-hq/rubocop-rake/issues/13): Add Rake/DuplicateTask cop. ([@pocke][])
-
-## 0.3.1 (2019-10-06)
-
-### Bug fixes
-
-* [#17](https://github.com/rubocop-hq/rubocop-rake/pull/17): Filter target files for Rake/ClassDefinitionInTask cop. ([@pocke][])
-
 <!--
 
 ### New features
@@ -21,6 +11,18 @@
 ### Changes
 
 -->
+
+## 0.4.0 (2019-10-13)
+
+### New features
+
+* [#13](https://github.com/rubocop-hq/rubocop-rake/issues/13): Add Rake/DuplicateTask cop. ([@pocke][])
+
+## 0.3.1 (2019-10-06)
+
+### Bug fixes
+
+* [#17](https://github.com/rubocop-hq/rubocop-rake/pull/17): Filter target files for Rake/ClassDefinitionInTask cop. ([@pocke][])
 
 ## 0.3.0 (2019-09-25)
 
