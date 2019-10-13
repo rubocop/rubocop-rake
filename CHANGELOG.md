@@ -2,6 +2,10 @@
 
 ## master (unreleased)
 
+### New features
+
+* [#13](https://github.com/rubocop-hq/rubocop-rake/issues/13): Add Rake/DuplicateTask cop. ([@pocke][])
+
 ## 0.3.1 (2019-10-06)
 
 ### Bug fixes
