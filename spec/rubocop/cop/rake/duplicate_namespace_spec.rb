@@ -71,4 +71,16 @@ RSpec.describe RuboCop::Cop::Rake::DuplicateNamespace do
       end
     RUBY
   end
+
+  it 'ignores task name or namespace are undecidable' do
+    expect_no_offenses(<<~RUBY)
+      namespace foo do
+      end
+
+      namespace bar do
+        namespace :foo do
+        end
+      end
+    RUBY
+  end
 end

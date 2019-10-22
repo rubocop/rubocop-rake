@@ -39,7 +39,7 @@ module RuboCop
 
         def on_namespace(node)
           namespaces = namespaces(node)
-          return unless namespaces
+          return if namespaces.include?(nil)
 
           full_name = namespaces.reverse.join(':')
           if (previous = @namespaces[full_name])
