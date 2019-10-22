@@ -5,7 +5,7 @@ module RuboCop
     module Rake
       # If namespaces are defined with the same name, Rake executes the both namespaces
       # in definition order.
-      # It is misleading sometimes. You should squash them into one definition
+      # It is redundant. You should squash them into one definition.
       # This cop detects it.
       #
       # @example
