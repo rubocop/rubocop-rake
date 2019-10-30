@@ -1,4 +1,5 @@
 Rake:
+  Enabled: true
   Include:
     - 'Rakefile'
     - '**/*.rake'
