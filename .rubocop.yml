@@ -19,7 +19,7 @@ Style/AccessModifierDeclarations:
 Style/NumericPredicate:
   Enabled: false
 
-Style/UnneededPercentQ:
+Style/RedundantPercentQ:
   Exclude:
     - '*.gemspec'
 

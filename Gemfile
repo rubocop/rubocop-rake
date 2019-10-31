@@ -7,4 +7,5 @@ gemspec
 
 gem "rake", "~> 12.0"
 gem 'rspec'
+gem 'rubocop', '>= 0.76'
 gem 'rubocop-rspec'
