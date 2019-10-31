@@ -2,10 +2,6 @@
 
 ## master (unreleased)
 
-### New features
-
-* [#14](https://github.com/rubocop-hq/rubocop-rake/issues/14): Add Rake/DuplicateNamespace cop. ([@jaruuuu][])
-
 <!--
 
 ### New features
@@ -15,6 +11,12 @@
 ### Changes
 
 -->
+
+## 0.5.0 (2019-10-31)
+
+### New features
+
+* [#14](https://github.com/rubocop-hq/rubocop-rake/issues/14): Add Rake/DuplicateNamespace cop. ([@jaruuuu][])
 
 ## 0.4.0 (2019-10-13)
 
