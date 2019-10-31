@@ -2,6 +2,10 @@
 
 ## master (unreleased)
 
+### New features
+
+* [#14](https://github.com/rubocop-hq/rubocop-rake/issues/14): Add Rake/DuplicateNamespace cop. ([@jaruuuu][])
+
 <!--
 
 ### New features
@@ -48,3 +52,4 @@
 * Add `Rake/Desc`. ([@pocke][])
 
 [@pocke]: https://github.com/pocke
+[@jaruuuu]: https://github.com/jaruuuu
