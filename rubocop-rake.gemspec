@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
   spec.summary       = %q{A RuboCop plugin for Rake}
   spec.description   = %q{A RuboCop plugin for Rake}
   spec.homepage      = "https://github.com/rubocop-hq/rubocop-rake"
-  spec.required_ruby_version = Gem::Requirement.new(">= 2.4.0")
+  spec.required_ruby_version = Gem::Requirement.new(">= 2.3.0")
   spec.licenses = ['MIT']
 
   spec.metadata["allowed_push_host"] = "https://rubygems.org"
