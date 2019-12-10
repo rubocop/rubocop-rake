@@ -55,15 +55,13 @@ module RuboCop
           return nil, task_node unless parent
           return parent, task_node unless parent.block_type?
 
-          # rubocop:disable Style/GuardClause
           if parent.children.find_index(task_node) == 0
             # when task {}
-            return parent.parent, parent
+            [parent.parent, parent]
           else
             # when something { task }
-            return parent, task_node
+            [parent, task_node]
           end
-          # rubocop:enable Style/GuardClause
         end
       end
     end
