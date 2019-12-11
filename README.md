@@ -1,3 +1,6 @@
+[![Gem Version](https://badge.fury.io/rb/rubocop-rake.svg)](https://rubygems.org/gems/rubocop-rake)
+[![CircleCI](https://circleci.com/gh/rubocop-hq/rubocop-rake.svg?style=svg)](https://circleci.com/gh/rubocop-hq/rubocop-rake)
+
 # RuboCop Rake
 
 A [RuboCop](https://github.com/rubocop-hq/rubocop) plugin for Rake.
