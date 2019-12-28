@@ -7,6 +7,9 @@ require:
 AllCops:
   TargetRubyVersion: 2.4
 
+Layout/LineLength:
+  Enabled: false
+
 Metrics:
   Enabled: false
 
