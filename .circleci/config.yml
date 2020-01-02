@@ -28,6 +28,11 @@ jobs:
       - image: circleci/ruby:2.6
     <<: *steps
 
+  ruby-2.7:
+    docker:
+      - image: circleci/ruby:2.7
+    <<: *steps
+
   ruby-head:
     docker:
       - image: rubocophq/circleci-ruby-snapshot:latest
@@ -40,5 +45,5 @@ workflows:
       - ruby-2.3
       - ruby-2.4
       - ruby-2.5
-      - ruby-2.6
+      - ruby-2.7
       - ruby-head
