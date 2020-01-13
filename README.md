@@ -10,7 +10,7 @@ A [RuboCop](https://github.com/rubocop-hq/rubocop) plugin for Rake.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'rubocop-rake'
+gem 'rubocop-rake', require: false
 ```
 
 And then execute:
