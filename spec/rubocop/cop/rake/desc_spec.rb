@@ -34,6 +34,15 @@ RSpec.describe RuboCop::Cop::Rake::Desc do
     RUBY
   end
 
+  it 'register an offense for task in kwbegin' do
+    expect_offense(<<~RUBY)
+      begin
+        task :foo
+        ^^^^^^^^^ Describe the task with `desc` method.
+      end
+    RUBY
+  end
+
   it 'does not register an offense for task with desc' do
     expect_no_offenses(<<~RUBY)
       desc 'Do foo'
@@ -45,11 +54,17 @@ RSpec.describe RuboCop::Cop::Rake::Desc do
     RUBY
   end
 
-  it 'do not register an offense for the default task' do
+  it 'does not register an offense for the default task' do
     expect_no_offenses(<<~RUBY)
       task default: :spec
 
       task default: [:spec, :rubocop]
+    RUBY
+  end
+
+  it 'does not register an offense when `task` is not a definition' do
+    expect_no_offenses(<<~RUBY)
+      task.name
     RUBY
   end
 end
