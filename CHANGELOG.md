@@ -2,15 +2,9 @@
 
 ## master (unreleased)
 
-<!--
-
-### New features
-
 ### Bug fixes
 
-### Changes
-
--->
+* [#28](https://github.com/rubocop-hq/rubocop-rake/issues/28): Fix `Rake/Desc` to avoid an error when `task` is not a task definition. ([@pocke][])
 
 ## 0.5.0 (2019-10-31)
 

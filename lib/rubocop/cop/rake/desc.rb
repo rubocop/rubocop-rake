@@ -42,6 +42,7 @@ module RuboCop
         private def task_with_desc?(node)
           parent, task = parent_and_task(node)
           return false unless parent
+          return true unless can_insert_desc_to?(parent)
 
           idx = parent.children.find_index(task) - 1
           desc_candidate = parent.children[idx]
@@ -62,6 +63,10 @@ module RuboCop
             # when something { task }
             [parent, task_node]
           end
+        end
+
+        private def can_insert_desc_to?(parent)
+          parent.begin_type? || parent.block_type? || parent.kwbegin_type?
         end
       end
     end
