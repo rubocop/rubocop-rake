@@ -2,6 +2,10 @@
 
 ## master (unreleased)
 
+### Changes
+
+* [#33](https://github.com/rubocop-hq/rubocop-rake/pull/33): Drop support for Ruby 2.3. ([@koic][])
+
 ## 0.5.1 (2020-02-14)
 
 ### Bug fixes
@@ -51,3 +55,4 @@
 
 [@pocke]: https://github.com/pocke
 [@jaruuuu]: https://github.com/jaruuuu
+[@koic]: https://github.com/koic
