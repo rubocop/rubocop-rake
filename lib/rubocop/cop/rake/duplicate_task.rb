@@ -23,7 +23,7 @@ module RuboCop
       #     p 'foo 2'
       #   end
       #
-      class DuplicateTask < Cop
+      class DuplicateTask < Base
         include Helper::OnTask
 
         MSG = 'Task `%<task>s` is defined at both %<previous>s and %<current>s.'

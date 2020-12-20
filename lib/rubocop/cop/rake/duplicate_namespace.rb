@@ -27,7 +27,7 @@ module RuboCop
       #     end
       #   end
       #
-      class DuplicateNamespace < Cop
+      class DuplicateNamespace < Base
         include Helper::OnNamespace
 
         MSG = 'Namespace `%<namespace>s` is defined at both %<previous>s and %<current>s.'

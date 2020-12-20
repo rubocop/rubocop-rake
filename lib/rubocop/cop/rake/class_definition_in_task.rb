@@ -28,18 +28,14 @@ module RuboCop
       #   task :foo do
       #   end
       #
-      class ClassDefinitionInTask < Cop
+      class ClassDefinitionInTask < Base
         MSG = 'Do not define a %<type>s in rake task, because it will be defined to the top level.'
 
         def on_class(node)
           return if Helper::ClassDefinition.in_class_definition?(node)
           return unless Helper::TaskDefinition.in_task_or_namespace?(node)
 
-          add_offense(node)
-        end
-
-        def message(node)
-          format(MSG, type: node.type)
+          add_offense(node, message: format(MSG, type: node.type))
         end
 
         alias on_module on_class
