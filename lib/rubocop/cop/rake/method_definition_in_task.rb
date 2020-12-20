@@ -30,7 +30,7 @@ module RuboCop
       #   task :foo do
       #   end
       #
-      class MethodDefinitionInTask < Cop
+      class MethodDefinitionInTask < Base
         MSG = 'Do not define a method in rake task, because it will be defined to the top level.'
 
         def on_def(node)

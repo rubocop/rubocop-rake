@@ -27,8 +27,9 @@ module RuboCop
       #   task :do_something do
       #   end
       #
-      class Desc < Cop
+      class Desc < Base
         include Helper::OnTask
+        extend AutoCorrector
 
         MSG = 'Describe the task with `desc` method.'
 
