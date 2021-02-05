@@ -1,10 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.describe RuboCop::Cop::Rake::MethodDefinitionInTask do
-  subject(:cop) { described_class.new(config) }
-
-  let(:config) { RuboCop::Config.new }
-
+RSpec.describe RuboCop::Cop::Rake::MethodDefinitionInTask, :config do
   it 'registers an offense to `def` in a task' do
     expect_offense(<<~RUBY)
       task :foo do

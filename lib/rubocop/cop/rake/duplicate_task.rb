@@ -54,7 +54,7 @@ module RuboCop
 
           node.each_ancestor(:block) do |block_node|
             send_node = block_node.send_node
-            next unless send_node.method_name == :namespace
+            next unless send_node.method?(:namespace)
 
             name = Helper::TaskName.task_name(send_node)
             ns << name

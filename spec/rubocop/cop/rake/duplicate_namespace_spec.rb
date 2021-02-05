@@ -1,10 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.describe RuboCop::Cop::Rake::DuplicateNamespace do
-  subject(:cop) { described_class.new(config) }
-
-  let(:config) { RuboCop::Config.new }
-
+RSpec.describe RuboCop::Cop::Rake::DuplicateNamespace, :config do
   it 'registers an offense when namespace `foo` is duplicated' do
     expect_offense(<<~RUBY, 'test.rb')
       namespace :foo do

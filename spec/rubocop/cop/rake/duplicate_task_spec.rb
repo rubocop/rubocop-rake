@@ -1,10 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.describe RuboCop::Cop::Rake::DuplicateTask do
-  subject(:cop) { described_class.new(config) }
-
-  let(:config) { RuboCop::Config.new }
-
+RSpec.describe RuboCop::Cop::Rake::DuplicateTask, :config do
   it 'registers an offense when `foo` is duplicated' do
     expect_offense(<<~RUBY, 'test.rb')
       task :foo do

@@ -1,10 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.describe RuboCop::Cop::Rake::Desc do
-  subject(:cop) { described_class.new(config) }
-
-  let(:config) { RuboCop::Config.new }
-
+RSpec.describe RuboCop::Cop::Rake::Desc, :config do
   it 'register an offense for task on the top level' do
     expect_offense(<<~RUBY)
       task :foo

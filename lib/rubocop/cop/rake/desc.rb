@@ -49,7 +49,7 @@ module RuboCop
           desc_candidate = parent.children[idx]
           return false unless desc_candidate
 
-          desc_candidate.send_type? && desc_candidate.method_name == :desc
+          desc_candidate.send_type? && desc_candidate.method?(:desc)
         end
 
         private def parent_and_task(task_node)
