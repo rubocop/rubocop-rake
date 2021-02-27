@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{A RuboCop plugin for Rake}
   spec.description   = %q{A RuboCop plugin for Rake}
-  spec.homepage      = "https://github.com/rubocop-hq/rubocop-rake"
+  spec.homepage      = "https://github.com/rubocop/rubocop-rake"
   spec.required_ruby_version = Gem::Requirement.new(">= 2.4.0")
   spec.licenses = ['MIT']
 
@@ -18,7 +18,7 @@ Gem::Specification.new do |spec|
 
   spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["source_code_uri"] = spec.homepage
-  spec.metadata["changelog_uri"] = "https://github.com/rubocop-hq/rubocop-rake/blob/master/CHANGELOG.md"
+  spec.metadata["changelog_uri"] = "https://github.com/rubocop/rubocop-rake/blob/master/CHANGELOG.md"
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.

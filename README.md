@@ -1,9 +1,9 @@
 [![Gem Version](https://badge.fury.io/rb/rubocop-rake.svg)](https://rubygems.org/gems/rubocop-rake)
-[![CircleCI](https://circleci.com/gh/rubocop-hq/rubocop-rake.svg?style=svg)](https://circleci.com/gh/rubocop-hq/rubocop-rake)
+[![CircleCI](https://circleci.com/gh/rubocop/rubocop-rake.svg?style=svg)](https://circleci.com/gh/rubocop/rubocop-rake)
 
 # RuboCop Rake
 
-A [RuboCop](https://github.com/rubocop-hq/rubocop) plugin for Rake.
+A [RuboCop](https://github.com/rubocop/rubocop) plugin for Rake.
 
 ## Installation
 
@@ -37,5 +37,5 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/rubocop-hq/rubocop-rake.
+Bug reports and pull requests are welcome on GitHub at https://github.com/rubocop/rubocop-rake.
 
