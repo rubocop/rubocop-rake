@@ -8,6 +8,9 @@ require:
 AllCops:
   TargetRubyVersion: 2.4
 
+InternalAffairs/NodeMatcherDirective:
+  Enabled: false
+
 Layout/LineLength:
   Enabled: false
 
