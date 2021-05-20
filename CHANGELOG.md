@@ -7,6 +7,7 @@
 * [#33](https://github.com/rubocop/rubocop-rake/pull/33): Drop support for Ruby 2.3. ([@koic][])
 * [#34](https://github.com/rubocop/rubocop-rake/pull/34): Require RuboCop 1.0 or higher. ([@koic][])
 * [#38](https://github.com/rubocop/rubocop-rake/pull/37): Drop support for Ruby 2.4. ([@tejasbubane])
+* [#36](https://github.com/rubocop/rubocop-rake/issues/36): Fix `Rake/Desc` to not generate offense for prerequisite declarations. ([@tejasbubane][])
 
 ## 0.5.1 (2020-02-14)
 
