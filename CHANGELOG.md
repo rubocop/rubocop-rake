@@ -6,6 +6,7 @@
 
 * [#33](https://github.com/rubocop/rubocop-rake/pull/33): Drop support for Ruby 2.3. ([@koic][])
 * [#34](https://github.com/rubocop/rubocop-rake/pull/34): Require RuboCop 1.0 or higher. ([@koic][])
+* [#38](https://github.com/rubocop/rubocop-rake/pull/37): Drop support for Ruby 2.4. ([@tejasbubane])
 
 ## 0.5.1 (2020-02-14)
 
@@ -57,3 +58,4 @@
 [@pocke]: https://github.com/pocke
 [@jaruuuu]: https://github.com/jaruuuu
 [@koic]: https://github.com/koic
+[@tejasbubane]: https://github.com/tejasbubane
