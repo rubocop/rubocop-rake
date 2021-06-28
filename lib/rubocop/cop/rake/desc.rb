@@ -33,9 +33,16 @@ module RuboCop
 
         MSG = 'Describe the task with `desc` method.'
 
+        def_node_matcher :prerequisites, <<~PATTERN
+          (send nil? :task (hash (pair _ $_)))
+        PATTERN
+
         def on_task(node)
           return if task_with_desc?(node)
           return if Helper::TaskName.task_name(node) == :default
+
+          requirements = prerequisites(node)
+          return if requirements&.array_type?
 
           add_offense(node)
         end

@@ -63,4 +63,17 @@ RSpec.describe RuboCop::Cop::Rake::Desc, :config do
       task.name
     RUBY
   end
+
+  it 'registers an offense for one prerequisite declaration (alias)' do
+    expect_offense(<<~RUBY)
+      task release: 'changelog:check_clean'
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Describe the task with `desc` method.
+    RUBY
+  end
+
+  it 'does not register an offense for multiple prerequisite declarations' do
+    expect_no_offenses(<<~RUBY)
+      task release: ['changelog:check_clean', 'changelog:create']
+    RUBY
+  end
 end
