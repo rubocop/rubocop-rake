@@ -2,6 +2,8 @@
 
 ## master (unreleased)
 
+## 0.6.0 (2021-06-29)
+
 ### Changes
 
 * [#33](https://github.com/rubocop/rubocop-rake/pull/33): Drop support for Ruby 2.3. ([@koic][])
