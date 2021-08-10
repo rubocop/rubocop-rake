@@ -7,6 +7,8 @@ module RuboCop
         module OnTask
           extend NodePattern::Macros
 
+          RESTRICT_ON_SEND = %i[task].freeze
+
           def_node_matcher :task?, <<~PATTERN
             (send nil? :task ...)
           PATTERN
