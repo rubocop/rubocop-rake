@@ -28,6 +28,11 @@ jobs:
       - image: cimg/ruby:3.0
     <<: *steps
 
+  ruby-3.1:
+    docker:
+      - image: cimg/ruby:3.1
+    <<: *steps
+
   ruby-head:
     docker:
       - image: rubocophq/circleci-ruby-snapshot:latest
