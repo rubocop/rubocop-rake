@@ -23,11 +23,42 @@ Or install it yourself as:
 
 ## Usage
 
+You need to tell RuboCop to load the Rake extension. There are three
+ways to do this:
+
+### RuboCop configuration file
+
 Put this into your `.rubocop.yml`.
 
 ```yaml
 require: rubocop-rake
 ```
+
+Alternatively, use the following array notation when specifying multiple extensions.
+
+```yaml
+require:
+  - rubocop-other-extension
+  - rubocop-rake
+```
+
+Now you can run `rubocop` and it will automatically load the RuboCop Rake
+cops together with the standard cops.
+
+### Command line
+
+```bash
+rubocop --require rubocop-rake
+```
+
+### Rake task
+
+```ruby
+RuboCop::RakeTask.new do |task|
+  task.requires << 'rubocop-rake'
+end
+```
+
 
 ## Development
 
