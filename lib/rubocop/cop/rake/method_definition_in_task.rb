@@ -3,7 +3,7 @@
 module RuboCop
   module Cop
     module Rake
-      # This cop detects method definition in a task or namespace,
+      # Detects method definition in a task or namespace,
       # because it is defined to the top level.
       # It is confusing because the scope looks in the task or namespace,
       # but actually it is defined to the top level.
