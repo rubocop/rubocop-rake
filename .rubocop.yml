@@ -44,12 +44,19 @@ Style/PercentLiteralDelimiters:
 Style/TrailingCommaInArguments:
   EnforcedStyleForMultiline: comma
 
-RSpec/ExampleLength:
-  Enabled: false
-
 Naming/FileName:
   Exclude:
     - 'lib/rubocop-rake.rb'
+
+RSpec:
+  Language:
+    Expectations:
+      - expect_correction
+      - expect_no_offenses
+      - expect_offense
+
+RSpec/ExampleLength:
+  Enabled: false
 
 # This disabling is a workaround for https://github.com/rubocop-hq/rubocop-rspec/issues/1068.
 # The cop has been disabled because FactoryBot is not used in this repository.
