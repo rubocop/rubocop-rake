@@ -8,6 +8,14 @@ module RuboCop
           extend NodePattern::Macros
           extend self
 
+          def_node_matcher :namespace?, <<-PATTERN
+            (block
+              (send _ {:namespace} ...)
+              args
+              _
+            )
+          PATTERN
+
           def_node_matcher :task_or_namespace?, <<-PATTERN
             (block
               (send _ {:task :namespace} ...)
@@ -15,6 +23,12 @@ module RuboCop
               _
             )
           PATTERN
+
+          def in_namespace?(node)
+            node.each_ancestor(:block).any? do |a|
+              namespace?(a)
+            end
+          end
 
           def in_task_or_namespace?(node)
             node.each_ancestor(:block).any? do |a|
