@@ -3,13 +3,13 @@
 module RuboCop
   module Cop
     module Rake
-      # Detects class or module definition in a task or namespace,
+      # Detects class or module definition in a namespace,
       # because it is defined to the top level.
-      # It is confusing because the scope looks in the task or namespace,
+      # It is confusing because the scope looks in the namespace,
       # but actually it is defined to the top level.
       #
       # @example
-      #   # bad
+      #   # good
       #   task :foo do
       #     class C
       #     end
@@ -29,11 +29,11 @@ module RuboCop
       #   end
       #
       class ClassDefinitionInTask < Base
-        MSG = 'Do not define a %<type>s in rake task, because it will be defined to the top level.'
+        MSG = 'Do not define a %<type>s in a rake namespace, because it will be defined to the top level.'
 
         def on_class(node)
           return if Helper::ClassDefinition.in_class_definition?(node)
-          return unless Helper::TaskDefinition.in_task_or_namespace?(node)
+          return unless Helper::TaskDefinition.in_namespace?(node)
 
           add_offense(node, message: format(MSG, type: node.type))
         end

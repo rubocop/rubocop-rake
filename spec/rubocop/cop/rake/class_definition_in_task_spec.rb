@@ -1,21 +1,39 @@
 # frozen_string_literal: true
 
 RSpec.describe RuboCop::Cop::Rake::ClassDefinitionInTask, :config do
-  it 'registers an offense to a class definition in task' do
-    expect_offense(<<~RUBY)
+  it 'allows class definition in task' do
+    expect_no_offenses(<<~RUBY)
       task :foo do
         class C
-        ^^^^^^^ Do not define a class in rake task, because it will be defined to the top level.
         end
       end
     RUBY
   end
 
-  it 'registers an offense to a module definition in task' do
-    expect_offense(<<~RUBY)
+  it 'allows module definition in task' do
+    expect_no_offenses(<<~RUBY)
       task :foo do
         module M
-        ^^^^^^^^ Do not define a module in rake task, because it will be defined to the top level.
+        end
+      end
+    RUBY
+  end
+
+  it 'registers an offense to a class definition in namespace' do
+    expect_offense(<<~RUBY)
+      namespace 'foo' do
+        class C
+        ^^^^^^^ Do not define a class in a rake namespace, because it will be defined to the top level.
+        end
+      end
+    RUBY
+  end
+
+  it 'registers an offense to a module definition in namespace' do
+    expect_offense(<<~RUBY)
+      namespace 'foo' do
+        module M
+        ^^^^^^^^ Do not define a module in a rake namespace, because it will be defined to the top level.
         end
       end
     RUBY
