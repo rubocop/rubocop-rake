@@ -16,23 +16,9 @@ module RuboCop
             )
           PATTERN
 
-          def_node_matcher :task_or_namespace?, <<-PATTERN
-            (block
-              (send _ {:task :namespace} ...)
-              args
-              _
-            )
-          PATTERN
-
           def in_namespace?(node)
             node.each_ancestor(:block).any? do |a|
               namespace?(a)
-            end
-          end
-
-          def in_task_or_namespace?(node)
-            node.each_ancestor(:block).any? do |a|
-              task_or_namespace?(a)
             end
           end
         end
