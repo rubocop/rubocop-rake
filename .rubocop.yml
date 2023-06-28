@@ -57,8 +57,3 @@ RSpec:
 
 RSpec/ExampleLength:
   Enabled: false
-
-# This disabling is a workaround for https://github.com/rubocop-hq/rubocop-rspec/issues/1068.
-# The cop has been disabled because FactoryBot is not used in this repository.
-RSpec/FactoryBot/CreateList:
-  Enabled: false
