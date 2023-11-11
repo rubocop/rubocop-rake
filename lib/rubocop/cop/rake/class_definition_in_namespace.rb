@@ -28,7 +28,7 @@ module RuboCop
       #   task :foo do
       #   end
       #
-      class ClassDefinitionInTask < Base
+      class ClassDefinitionInNamespace < Base
         MSG = 'Do not define a %<type>s in a rake namespace, because it will be defined to the top level.'
 
         def on_class(node)

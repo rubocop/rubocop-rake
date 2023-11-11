@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.describe RuboCop::Cop::Rake::ClassDefinitionInTask, :config do
+RSpec.describe RuboCop::Cop::Rake::ClassDefinitionInNamespace, :config do
   it 'allows class definition in task' do
     expect_no_offenses(<<~RUBY)
       task :foo do
@@ -50,7 +50,7 @@ RSpec.describe RuboCop::Cop::Rake::ClassDefinitionInTask, :config do
     RUBY
   end
 
-  it 'allows class definition outside task' do
+  it 'allows class definition at the top level' do
     expect_no_offenses(<<~RUBY)
       class C
       end

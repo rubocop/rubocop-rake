@@ -4,8 +4,8 @@ Rake:
     - 'Rakefile'
     - '**/*.rake'
 
-Rake/ClassDefinitionInTask:
-  Description: 'Do not define a class or module in rake task, because it will be defined to the top level.'
+Rake/ClassDefinitionInNamespace:
+  Description: 'Do not define a class or module in a rake namespace, because it will be defined to the top level.'
   Enabled: true
   VersionAdded: '0.3.0'
 
