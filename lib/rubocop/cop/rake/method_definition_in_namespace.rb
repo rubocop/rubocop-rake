@@ -30,7 +30,7 @@ module RuboCop
       #   task :foo do
       #   end
       #
-      class MethodDefinitionInTask < Base
+      class MethodDefinitionInNamespace < Base
         MSG = 'Do not define a method in a rake namespace, because it will be defined to the top level.'
 
         def on_def(node)

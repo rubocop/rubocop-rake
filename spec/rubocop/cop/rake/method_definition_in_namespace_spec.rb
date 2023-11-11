@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.describe RuboCop::Cop::Rake::MethodDefinitionInTask, :config do
+RSpec.describe RuboCop::Cop::Rake::MethodDefinitionInNamespace, :config do
   it 'does not register an offense to `def` in a task' do
     expect_no_offenses(<<~RUBY)
       task :foo do

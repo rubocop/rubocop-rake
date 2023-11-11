@@ -24,7 +24,7 @@ Rake/DuplicateTask:
   Enabled: true
   VersionAdded: '0.4.0'
 
-Rake/MethodDefinitionInTask:
-  Description: 'Do not define a method in rake task, because it will be defined to the top level.'
+Rake/MethodDefinitionInNamespace:
+  Description: 'Do not define a method in a rake namespace, because it will be defined to the top level.'
   Enabled: true
   VersionAdded: '0.2.0'
