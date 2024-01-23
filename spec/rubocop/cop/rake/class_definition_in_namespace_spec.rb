@@ -19,6 +19,17 @@ RSpec.describe RuboCop::Cop::Rake::ClassDefinitionInNamespace, :config do
     RUBY
   end
 
+  it 'allows class definition in a task when wrapped in a namespace' do
+    expect_no_offenses(<<~RUBY)
+      namespace :bar do
+        task :foo do
+          class C
+          end
+        end
+      end
+    RUBY
+  end
+
   it 'registers an offense to a class definition in namespace' do
     expect_offense(<<~RUBY)
       namespace 'foo' do
