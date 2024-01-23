@@ -35,6 +35,8 @@ module RuboCop
 
         def on_def(node)
           return if Helper::ClassDefinition.in_class_definition?(node)
+          return if Helper::TaskDefinition.in_task?(node)
+
           return unless Helper::TaskDefinition.in_namespace?(node)
 
           add_offense(node)

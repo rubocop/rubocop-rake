@@ -23,6 +23,18 @@ RSpec.describe RuboCop::Cop::Rake::MethodDefinitionInNamespace, :config do
     RUBY
   end
 
+  it 'does not register an offense to `def` in a task when wrapped in a namespace' do
+    expect_no_offenses(<<~RUBY)
+      namespace :bar do
+        task :foo do
+          def helper_method
+            do_something
+          end
+        end
+      end
+    RUBY
+  end
+
   it 'registers an offense to `def` in a namespace' do
     expect_offense(<<~RUBY)
       namespace 'foo' do
