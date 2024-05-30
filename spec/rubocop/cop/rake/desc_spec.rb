@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 RSpec.describe RuboCop::Cop::Rake::Desc, :config do
-  it 'register an offense for task on the top level' do
+  it 'registers an offense for task on the top level' do
     expect_offense(<<~RUBY)
       task :foo
       ^^^^^^^^^ Describe the task with `desc` method.
@@ -13,7 +13,7 @@ RSpec.describe RuboCop::Cop::Rake::Desc, :config do
     RUBY
   end
 
-  it 'register an offense for task with block in a block' do
+  it 'registers an offense for task with block in a block' do
     expect_offense(<<~RUBY)
       tap do
         task :foo
@@ -30,7 +30,7 @@ RSpec.describe RuboCop::Cop::Rake::Desc, :config do
     RUBY
   end
 
-  it 'register an offense for task in kwbegin' do
+  it 'registers an offense for task in kwbegin' do
     expect_offense(<<~RUBY)
       begin
         task :foo
