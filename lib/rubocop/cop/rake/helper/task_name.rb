@@ -8,7 +8,7 @@ module RuboCop
           extend self
 
           def task_name(node)
-            first_arg = node.arguments[0]
+            first_arg = node.first_argument
             case first_arg&.type
             when :sym, :str
               first_arg.value.to_sym

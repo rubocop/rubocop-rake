@@ -1,5 +1,5 @@
 [![Gem Version](https://badge.fury.io/rb/rubocop-rake.svg)](https://rubygems.org/gems/rubocop-rake)
-[![CircleCI](https://circleci.com/gh/rubocop/rubocop-rake.svg?style=svg)](https://circleci.com/gh/rubocop/rubocop-rake)
+![CI](https://github.com/rubocop/rubocop-rake/workflows/main.yml/badge.svg)
 
 # RuboCop Rake
 
