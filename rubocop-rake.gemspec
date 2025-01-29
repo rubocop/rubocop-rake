@@ -19,7 +19,8 @@ Gem::Specification.new do |spec|
     'homepage_uri' => spec.homepage,
     'source_code_uri' => spec.homepage,
     'changelog_uri' => "https://github.com/rubocop/rubocop-rake/blob/master/CHANGELOG.md",
-    'rubygems_mfa_required' => 'true'
+    'rubygems_mfa_required' => 'true',
+    'default_lint_roller_plugin' => 'RuboCop::Rake::Plugin'
   }
 
   # Specify which files should be added to the gem when it is released.
@@ -31,5 +32,6 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_dependency 'rubocop', '~> 1.0'
+  spec.add_dependency 'lint_roller', '~> 1.1'
+  spec.add_dependency 'rubocop', '>= 1.72.1'
 end

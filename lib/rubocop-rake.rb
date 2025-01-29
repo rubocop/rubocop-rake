@@ -4,9 +4,7 @@ require 'rubocop'
 
 require_relative 'rubocop/rake'
 require_relative 'rubocop/rake/version'
-require_relative 'rubocop/rake/inject'
-
-RuboCop::Rake::Inject.defaults!
+require_relative 'rubocop/rake/plugin'
 
 require_relative 'rubocop/cop/rake/helper/class_definition'
 require_relative 'rubocop/cop/rake/helper/on_task'
