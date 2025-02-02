@@ -74,7 +74,7 @@ module RuboCop
         end
 
         private def can_insert_desc_to?(parent)
-          parent.begin_type? || parent.block_type? || parent.kwbegin_type?
+          parent.type?(:begin, :block, :kwbegin)
         end
       end
     end
