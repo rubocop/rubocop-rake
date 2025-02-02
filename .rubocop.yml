@@ -12,6 +12,9 @@ AllCops:
 InternalAffairs/NodeMatcherDirective:
   Enabled: false
 
+InternalAffairs/OnSendWithoutOnCSend:
+  Enabled: false
+
 Layout/LineLength:
   Enabled: false
 
