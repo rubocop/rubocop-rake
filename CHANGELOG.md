@@ -2,6 +2,8 @@
 
 ## master (unreleased)
 
+* [#57](https://github.com/rubocop/rubocop-rake/pull/57): Drop support Ruby 2.5 and 2.6 for runtime environment. ([@koic][])
+
 ## 0.6.0 (2021-06-29)
 
 ### Changes
