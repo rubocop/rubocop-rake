@@ -11,9 +11,8 @@ module RuboCop
         path = CONFIG_DEFAULT.to_s
         hash = ConfigLoader.send(:load_yaml_configuration, path)
         config = Config.new(hash, path)
-        puts "configuration from #{path}" if ConfigLoader.debug?
-        config = ConfigLoader.merge_with_default(config, path)
-        ConfigLoader.instance_variable_set(:@default_configuration, config)
+        new_config = ConfigLoader.merge_with_default(config, path)
+        ConfigLoader.instance_variable_set(:@default_configuration, new_config)
       end
     end
   end
