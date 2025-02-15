@@ -2,6 +2,8 @@
 
 ## master (unreleased)
 
+## 0.7.0 (2025-02-16)
+
 * [#58](https://github.com/rubocop/rubocop-rake/pull/58): Pluginfy RuboCop Rake. ([@koic][])
 * [#57](https://github.com/rubocop/rubocop-rake/pull/57): Drop support Ruby 2.5 and 2.6 for runtime environment. ([@koic][])
 
