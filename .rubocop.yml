@@ -1,8 +1,10 @@
 inherit_from: .rubocop_todo.yml
 
-require:
-  - rubocop/cop/internal_affairs
+plugins:
+  - rubocop-internal_affairs
   - rubocop-rake
+
+require:
   - rubocop-rspec
 
 AllCops:

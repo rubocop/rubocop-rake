@@ -31,13 +31,13 @@ ways to do this:
 Put this into your `.rubocop.yml`.
 
 ```yaml
-require: rubocop-rake
+plugins: rubocop-rake
 ```
 
 Alternatively, use the following array notation when specifying multiple extensions.
 
 ```yaml
-require:
+plugins:
   - rubocop-other-extension
   - rubocop-rake
 ```
@@ -45,10 +45,13 @@ require:
 Now you can run `rubocop` and it will automatically load the RuboCop Rake
 cops together with the standard cops.
 
+> [!NOTE]
+> The plugin system is supported in RuboCop 1.72+. In earlier versions, use `require` instead of `plugins`.
+
 ### Command line
 
 ```bash
-rubocop --require rubocop-rake
+rubocop --plugin rubocop-rake
 ```
 
 ### Rake task
@@ -57,7 +60,7 @@ rubocop --require rubocop-rake
 require 'rubocop/rake_task'
 
 RuboCop::RakeTask.new do |task|
-  task.requires << 'rubocop-rake'
+  task.plugins << 'rubocop-rake'
 end
 ```
 
@@ -71,4 +74,3 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/rubocop/rubocop-rake.
-
