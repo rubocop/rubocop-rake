@@ -9,7 +9,7 @@ module RuboCop
       def about
         LintRoller::About.new(
           name: 'rubocop-rake',
-          version: Version::STRING,
+          version: VERSION,
           homepage: 'https://github.com/rubocop/rubocop-rake',
           description: 'A RuboCop plugin for Rake.',
         )
