@@ -2,6 +2,8 @@
 
 ## master (unreleased)
 
+## 0.7.1 (2025-02-16)
+
 ### Bug fixes
 
 * [#59](https://github.com/rubocop/rubocop-rake/pull/59): Fix incorrect plugin version when displaing `rubocop -V`. ([@koic][])
