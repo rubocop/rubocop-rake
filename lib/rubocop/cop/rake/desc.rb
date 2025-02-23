@@ -39,10 +39,8 @@ module RuboCop
 
         def on_task(node)
           return if task_with_desc?(node)
-          return if Helper::TaskName.task_name(node) == :default
-
-          requirements = prerequisites(node)
-          return if requirements&.array_type?
+          return if default_task?(node)
+          return if multiple_prerequisites?(node)
 
           add_offense(node)
         end
@@ -75,6 +73,18 @@ module RuboCop
 
         private def can_insert_desc_to?(parent)
           parent.type?(:begin, :block, :kwbegin)
+        end
+
+        private def default_task?(node)
+          Helper::TaskName.task_name(node) == :default
+        end
+
+        private def multiple_prerequisites?(node)
+          requirements = prerequisites(node)
+          return false unless requirements&.array_type?
+
+          children = requirements.children
+          children && children.size > 1
         end
       end
     end

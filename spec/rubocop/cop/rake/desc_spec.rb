@@ -68,12 +68,28 @@ RSpec.describe RuboCop::Cop::Rake::Desc, :config do
     expect_offense(<<~RUBY)
       task release: 'changelog:check_clean'
       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Describe the task with `desc` method.
+
+      task release: :changelog
+      ^^^^^^^^^^^^^^^^^^^^^^^^ Describe the task with `desc` method.
+
+      task release: %w[changelog]
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^ Describe the task with `desc` method.
+
+      task release: %i[changelog]
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^ Describe the task with `desc` method.
+
+      task "release" => :environment
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Describe the task with `desc` method.
     RUBY
   end
 
   it 'does not register an offense for multiple prerequisite declarations' do
     expect_no_offenses(<<~RUBY)
       task release: ['changelog:check_clean', 'changelog:create']
+
+      task release: %w[changelog lint]
+
+      task release: %i[changelog lint]
     RUBY
   end
 end

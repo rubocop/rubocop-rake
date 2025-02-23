@@ -2,6 +2,8 @@
 
 ## master (unreleased)
 
+* [#49](https://github.com/rubocop/rubocop-rake/issues/49): Fix false negatives for `Rake/Desc` when a task has a single prerequisite in an array. ([@ydakuka][])
+
 ## 0.7.1 (2025-02-16)
 
 ### Bug fixes
@@ -78,3 +80,4 @@
 [@jaruuuu]: https://github.com/jaruuuu
 [@koic]: https://github.com/koic
 [@tejasbubane]: https://github.com/tejasbubane
+[@ydakuka]: https://github.com/ydakuka
