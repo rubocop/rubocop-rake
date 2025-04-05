@@ -5,7 +5,7 @@ module RuboCop
     module Rake
       # Detects method definition in a namespace,
       # because it is defined to the top level.
-      # It is confusing because the scope looks in the namespace,
+      # It is confusing because the method appears to be defined in the namespace,
       # but actually it is defined to the top level.
       #
       # @example
