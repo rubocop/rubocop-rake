@@ -3,8 +3,6 @@ inherit_from: .rubocop_todo.yml
 plugins:
   - rubocop-internal_affairs
   - rubocop-rake
-
-require:
   - rubocop-rspec
 
 AllCops:
