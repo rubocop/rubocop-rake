@@ -1,11 +1,10 @@
 # frozen_string_literal: true
 
-RSpec.describe RuboCop::Cop::Rake::MethodDefinitionInTask, :config do
-  it 'registers an offense to `def` in a task' do
-    expect_offense(<<~RUBY)
+RSpec.describe RuboCop::Cop::Rake::MethodDefinitionInNamespace, :config do
+  it 'does not register an offense to `def` in a task' do
+    expect_no_offenses(<<~RUBY)
       task :foo do
         def helper_method
-        ^^^^^^^^^^^^^^^^^ Do not define a method in rake task, because it will be defined to the top level.
           do_something
         end
       end
@@ -14,13 +13,23 @@ RSpec.describe RuboCop::Cop::Rake::MethodDefinitionInTask, :config do
         do_something
 
         def helper_method
-        ^^^^^^^^^^^^^^^^^ Do not define a method in rake task, because it will be defined to the top level.
           do_something
         end
 
         def self.foo
-        ^^^^^^^^^^^^ Do not define a method in rake task, because it will be defined to the top level.
           do_something2
+        end
+      end
+    RUBY
+  end
+
+  it 'does not register an offense to `def` in a task when wrapped in a namespace' do
+    expect_no_offenses(<<~RUBY)
+      namespace :bar do
+        task :foo do
+          def helper_method
+            do_something
+          end
         end
       end
     RUBY
@@ -30,7 +39,7 @@ RSpec.describe RuboCop::Cop::Rake::MethodDefinitionInTask, :config do
     expect_offense(<<~RUBY)
       namespace 'foo' do
         def helper_method
-        ^^^^^^^^^^^^^^^^^ Do not define a method in rake task, because it will be defined to the top level.
+        ^^^^^^^^^^^^^^^^^ Do not define a method in a rake namespace, because it will be defined to the top level.
           do_something
         end
 
