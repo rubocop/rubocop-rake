@@ -24,7 +24,7 @@ RSpec.describe 'cop lazy loading' do # rubocop:disable RSpec/DescribeClass
       puts "loaded_cop_files=\#{loaded.size}"
     RUBY
 
-    expect(output).to include('registered=5', 'loaded_cop_files=0')
+    expect(output).to include('registered=6', 'loaded_cop_files=0')
   end
 
   it 'resolves every helper file in `lib/rubocop/cop/rake/helper` through an autoload' do
