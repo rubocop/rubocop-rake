@@ -14,6 +14,7 @@ module RuboCop
       register_cop :DuplicateTask, "#{__dir__}/rake/duplicate_task"
       register_cop :DuplicateNamespace, "#{__dir__}/rake/duplicate_namespace"
       register_cop :MethodDefinitionInTask, "#{__dir__}/rake/method_definition_in_task"
+      register_cop :RequireOutsideTask, "#{__dir__}/rake/require_outside_task"
     end
   end
 end
