@@ -2,6 +2,10 @@
 
 ## master (unreleased)
 
+### Changes
+
+* [#66](https://github.com/rubocop/rubocop-rake/pull/66): Speed up loading rubocop-rake by lazily loading only the cops needed for a run. This requires RuboCop 1.89.0+. ([@koic][])
+
 ## 0.7.1 (2025-02-16)
 
 ### Bug fixes
