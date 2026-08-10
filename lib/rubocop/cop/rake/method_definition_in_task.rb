@@ -30,6 +30,13 @@ module RuboCop
       #   task :foo do
       #   end
       #
+      #   # good - A lambda assigned to a local variable is scoped to the
+      #   #        block, so it is not defined at the top level.
+      #   task :foo do
+      #     helper = -> { do_something }
+      #     helper.call
+      #   end
+      #
       class MethodDefinitionInTask < Base
         MSG = 'Do not define a method in rake task, because it will be defined to the top level.'
 
