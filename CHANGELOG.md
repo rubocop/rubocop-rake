@@ -2,6 +2,10 @@
 
 ## master (unreleased)
 
+### New features
+
+* [#65](https://github.com/rubocop/rubocop-rake/pull/65): Add `Rake/ConstantDefinitionInTask` cop. ([@corsonknowles][])
+
 ### Changes
 
 * [#66](https://github.com/rubocop/rubocop-rake/pull/66): Speed up loading rubocop-rake by lazily loading only the cops needed for a run. This requires RuboCop 1.89.0+. ([@koic][])
@@ -82,3 +86,4 @@
 [@jaruuuu]: https://github.com/jaruuuu
 [@koic]: https://github.com/koic
 [@tejasbubane]: https://github.com/tejasbubane
+[@corsonknowles]: https://github.com/corsonknowles

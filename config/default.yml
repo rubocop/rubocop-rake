@@ -9,6 +9,11 @@ Rake/ClassDefinitionInTask:
   Enabled: true
   VersionAdded: '0.3.0'
 
+Rake/ConstantDefinitionInTask:
+  Description: 'Do not assign a constant in rake task, because it will be defined to the top level.'
+  Enabled: pending
+  VersionAdded: '<<next>>'
+
 Rake/Desc:
   Description: 'Describe the task with `desc` method.'
   Enabled: true

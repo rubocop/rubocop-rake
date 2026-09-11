@@ -10,6 +10,7 @@ module RuboCop
       extend LazyLoader
 
       register_cop :ClassDefinitionInTask, "#{__dir__}/rake/class_definition_in_task"
+      register_cop :ConstantDefinitionInTask, "#{__dir__}/rake/constant_definition_in_task"
       register_cop :Desc, "#{__dir__}/rake/desc"
       register_cop :DuplicateTask, "#{__dir__}/rake/duplicate_task"
       register_cop :DuplicateNamespace, "#{__dir__}/rake/duplicate_namespace"
